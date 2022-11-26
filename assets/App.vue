@@ -5,9 +5,9 @@ import Logo from '@/components/icons/IconLogo.vue'
 
 <template>
   <nav>
-    <RouterLink to="/">Projects</RouterLink>
+    <RouterLink to="/">Projets</RouterLink>
     <Logo />
-    <RouterLink to="/about">About me</RouterLink>
+    <RouterLink to="/about">Contact</RouterLink>
   </nav>
 
   <RouterView />
@@ -26,8 +26,7 @@ import Logo from '@/components/icons/IconLogo.vue'
 
 nav{
   width: 100%;
-  height: 10rem;
-  margin-bottom: 5rem;
+  height: 18rem;
   text-transform: uppercase;
   letter-spacing: .5rem;
   display: flex;
@@ -39,10 +38,11 @@ nav a{
   color: var(--color-text);
   text-decoration: none;
   margin: auto 3rem;
+  font-weight: 700;
 }
 
 nav a.router-link-exact-active {
   /* color: var(--color-text); */
-  color: #CD3341;
+  color: #FFA200;
 }
 </style>

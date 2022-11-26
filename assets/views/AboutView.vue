@@ -1,7 +1,9 @@
+<script setup>
+import Carousel from '@/components/Carousel.vue'
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Carousel />
 </template>
 
 <style>
