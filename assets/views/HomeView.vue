@@ -24,8 +24,6 @@ export default {
 
     document.querySelectorAll('section > article').forEach((article) => {
       article.addEventListener('click', () => {
-
-        dialog.style.setProperty('--text', testArray.desc)
         dialog.innerHTML = '<video src="'+ testArray.url +'" loop controls></video><p>' + testArray.desc + '</p>'
 
         dialog.showModal()
@@ -52,51 +50,38 @@ export default {
     <button>Photos</button>
   </header>
   <section>
-    <article class="photo web">
-      <img loading="lazy" src="https://ucb8fdffb35da97b677bd86ce209.previews.dropboxusercontent.com/p/thumb/ABr1Sqpv1TTTpBPsB4pr6ceqnAi1IO2HGJCyvP4IpkdF4gEVCl0SuWh-AVqIYWpuh_5hVI2MUJ6bKEXg7HnG5cZ-8VQ82JKs9fTbuikXDbH9Hdwgq-1bLxg4qsK7ZpQ8MdtDFxrSCq_M2bDTTfc4mfhBz2OBCxC3t-9faJAlIgnrID_2--FWePKYZD9y4OWP1VjbvsVeSSJJZSSdRmMjezxj_2WMcdWgvEmNkpcuEFHWc67fa2gmJ6vmi7zI5n9mBHImUHFqmeHm5sxeEutY1fkQ1VErJw3M8VHG2Y1gxnL6gC8p3LyzuhRdlX5Z4zppF-Px4YzlWPmhhNJ6F5KKbNyGXYecAOAfINZYYpzG2U8kVnis3kIhkEmTpc2B3zXA2Sw/p.jpeg" alt="">
+    <article class="photo web" style="--text: ''">
+      <img loading="lazy" src="https://i.imgur.com/O7X0ZED.gif" alt="">
     </article>
-    <article class="album print">
+    <article class="album print" style="--text: ''">
       <img loading="lazy" src="https://ucff2fa7b5b79bcd9ec3901fa093.previews.dropboxusercontent.com/p/thumb/ABoGNU7FE2h_M94YVxq1094OuMK7LA0jxFgn16XVAQETu1nf7ZQmVvV915cDkg_yF1rbwylCira3a_Ahnm5sVzc7VDZSvfkdHcHClXLG-okMFbZrYtsV18K3g3MPpdfX4IPvzOj2ZaBh34SfTSJyRnQqHlNz8uJZg_YMvFjcM3zC9UsTMxl3xkAbFEKj7yLbqlatwqTCerTULqQCxquhDiDKTX92rPxMHSMQC2n7sBlokpYm_BTtgLM3zPBqEg6vGEyImLSSt0MtSuhxaohIMUTesFJBbilxsh22xC6atkvG0VxNNDxAsT7X4qrMKNhGU3y5DySBVnZXRA-gGx4dkfh0888keIvhuEHXFJKr163imjoYmXUcxvIOonP2E48cwZw/p.jpeg" alt="">
     </article>
-    <article class="video">
+    <article class="video" style="--text: 'LE CAMEMBERT';">
       <video src="https://www.dropbox.com/s/54cod9y08lsuk7c/SCENE.mp4?dl=1" autoplay muted loop></video>
     </article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
-    <article></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
+    <article style="--text: ''"></article>
   </section>
   <dialog>
 
@@ -172,7 +157,7 @@ article:nth-child(6n+4) {
 } */
 
 article::after{
-  content: '';
+  content: var(--text);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -180,7 +165,13 @@ article::after{
   z-index: 2;
   width: 100%;
   height: 100%;
-  background: #CD3341;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 50px;
+  font-weight: 700;
+  background: #FFA200;
   opacity: 0;
   transition: .3s linear;
 }
@@ -263,7 +254,6 @@ h1{
 }
 
 dialog{
-  --text: '';
   position: absolute;
   top: 50%;
   left: 50%;
