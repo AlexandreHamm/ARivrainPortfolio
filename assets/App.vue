@@ -45,4 +45,24 @@ nav a.router-link-exact-active {
   /* color: var(--color-text); */
   color: #FFA200;
 }
+
+dialog > *:not(p){
+  width: 100%;
+  height: 100%;
+  max-width: 50vw;
+  max-height: 50vh;
+  object-fit: contain;
+  /* border: none; */
+  outline: none;
+}
+dialog > p{
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 0 0 2px #000;
+}
 </style>
