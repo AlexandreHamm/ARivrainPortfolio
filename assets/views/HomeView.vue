@@ -27,11 +27,13 @@ export default {
         dialog.innerHTML = '<video src="'+ testArray.url +'" loop controls></video><p>' + testArray.desc + '</p>'
 
         dialog.showModal()
+        document.querySelector('body').style.overflowY = 'hidden'
       })
     })
     dialog.addEventListener('click', (event) => {
       if(event.target === dialog){
         dialog.close()
+        document.querySelector('body').style.overflowY = 'scroll'
       }
     })
   },
@@ -137,7 +139,7 @@ article{
   isolation: isolate;
   width: calc(35vw - 1.5rem);
   position: relative;
-  background: #AAA;
+  background: var(--color-logo);
   overflow: hidden;
 }
 article.hidden{
